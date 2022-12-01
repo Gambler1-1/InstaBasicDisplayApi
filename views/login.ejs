@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <title>Login</title>
   <!-- Required meta tags -->
@@ -24,10 +25,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:140vh">
+
             <% if (!isLoggedIn) { %>
-              
+
               <li class="nav-item">
                 <a class="nav-link" href="./signup">Signup</a>
               </li>
@@ -37,9 +38,9 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                       aria-expanded="false">
                       <%= user %>
-  
+
                     </a>
-  
+
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Action</a></li>
                       <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -49,9 +50,9 @@
                       <li><a class="dropdown-item" href="/auth/logout">Logout</a></li>
                     </ul>
                   </div>
-  
+
                   <% } %>
-  
+
           </ul>
         </div>
       </div>
@@ -60,31 +61,31 @@
   <main>
     <div class="mt"></div>
     <div class="container ">
-      
+
       <h1>LOGIN</h1>
       <% if (errorMessage) { %>
         <div class="alert alert-danger" role="alert">
           <%= errorMessage %>
         </div>
-         
+
         <% } %>
-        
-      <form action="/auth/postLogin" method="POST">
 
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" name="email" id="email" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="text" name="password" class="form-control" id="password"  required>
-        </div>
+          <form action="/auth/postLogin" method="POST">
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="text" name="password" class="form-control" id="password" required>
+            </div>
 
 
-        <button type="submit" class="btn btn-outline-dark">Log In</button>
-        
-      </form>
-      
+            <button type="submit" class="btn btn-outline-dark">Log In</button>
+
+          </form>
+
     </div>
     <div class="mb"></div>
   </main>
@@ -92,9 +93,9 @@
     <section>
       <!-- Footer -->
       <footer class="text-center text-white" style="background-color: #535353;">
-  
+
         <!-- Grid container -->
-  
+
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2022 Copyright:
@@ -129,13 +130,15 @@
     align-content: center;
     width: 500px;
   }
-  .footer{
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   margin-top: 200px;
-   
-}
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 200px;
+
+  }
 </style>
+
 </html>
