@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
 
 isAuth = (req, res, next) => {
+  console.log("IS AUTH CALLED");
+  req.session.profile = true;
   if (!req.session.isLoggedIn) {
     return res.redirect("/auth/login");
   }

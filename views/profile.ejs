@@ -19,6 +19,9 @@
         top: 0;
         width: 100%;
         background-color: aquamarine;
+        position: fixed;
+        z-index:5;
+
 
     }
 
@@ -26,6 +29,7 @@
 
     .card:hover {
         transform: scale(1.1);
+        transition:0.3s ease all;
     }
 
     .card-img-top {
@@ -119,8 +123,7 @@
                                         </a>
     
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">View Saved Posts</a></li>
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>
@@ -141,20 +144,21 @@
     <main>
         
         
-        <div class="container">
-            <% if (errorMessage) { %>
-                <div class="alert alert-success" role="alert">
-                    <%= errorMessage %>
-                </div>
-            
-                <% } %>
-        </div>
+        
         
        
         <% if (data.length> 0) { %>
-            <div class="container "style="justify-content:center ;margin-left:600px ">
-                <div class="mt-5 mb-5">
-                    <h2>YOUR INSTAGRAM POSTS</h2>
+            <div class="container  "style="justify-content:center ;margin-left:650px; ,margin-bottom:300px; ">
+                <div class="container mt-5">
+                    <% if (errorMessage) { %>
+                        <div class="alert alert-success" role="alert">
+                            <%= errorMessage %>
+                        </div>
+                
+                        <% } %>
+                </div>
+                <div class="mt-7 mb-5" style="text-align:center; margin-top: 70px; ">
+                    <h2><strong>YOUR INSTAGRAM POSTS<strong></strong></h2>
 
                 </div>
             
@@ -171,7 +175,7 @@
                                     </h5>
                                     
                           
-                                    <a href="/savePost/<%= item.id %>" class="btn btn-outline-primary">Save Post</a>
+                                    <a href="/savePost/<%= item.id %>" class="btn btn-outline-dark">Save Post</a>
                                     
                                    
 

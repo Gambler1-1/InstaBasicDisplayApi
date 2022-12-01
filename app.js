@@ -14,6 +14,7 @@ const store = new MongoDbStore({
 });
 
 const path = require("path");
+//Setting view engine
 app.set("view engine", "ejs");
 app.set("shop", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,7 +29,8 @@ app.use(
 app.use(flash());
 
 // app.use((req, res, next) => {
-//   console.log(req.session);
+//   sess = req.session;
+
 //   next();
 // });
 

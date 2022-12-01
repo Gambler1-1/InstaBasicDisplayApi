@@ -3,6 +3,9 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 
 login = (req, res) => {
+  if (req.session.profile) {
+    console.log(req.session.profile);
+  }
   let message = req.flash("error");
   if (message.length > 0) {
     message = message[0];
@@ -22,7 +25,6 @@ login = (req, res) => {
 };
 
 postLogin = async (req, res) => {
-  let isLoggedIn = false;
   if (req.session.isLoggedIn) {
     isLoggedIn = true;
   }
@@ -43,7 +45,11 @@ postLogin = async (req, res) => {
       req.session.tooken = token;
       req.session.isLoggedIn = true;
       req.session.AuthUser = user.name;
-      return res.redirect("/");
+      if (req.session.profile == true) {
+        return res.redirect("/getProfile");
+      } else {
+        return res.redirect("/");
+      }
     } else {
       console.log("Password not matched");
 
