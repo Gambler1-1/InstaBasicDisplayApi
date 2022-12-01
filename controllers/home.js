@@ -17,6 +17,9 @@ async function getIndex(req, res, next) {
     res.redirect("/auth/login");
   }
 }
+async function modal(req, res) {
+  res.render("modal");
+}
 
 const getProfile = async (req, res) => {
   let message = req.flash("error");
@@ -95,5 +98,6 @@ const savepost = async (req, res) => {
 module.exports = {
   getIndex,
   savepost,
+  modal,
   getProfile,
 };
