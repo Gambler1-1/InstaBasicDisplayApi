@@ -143,6 +143,24 @@
             </div>
         </nav>
     </header>
+        <script >
+            function caption(variable) {
+
+                document.getElementById('testH1').innerHTML = variable;
+            }
+             function image(variable2) {
+
+                    document.getElementById('imgid').src = variable2;
+                }
+                // function id(variable3) {
+                //     	// document.getElementById("abc").href = "http://localhost:4000/savepost/" + variable3;
+
+                // }
+                 function changeURL(id) {
+                        var newURL = "http://localhost:4000/savepost/"+id;
+                        document.getElementById("linke").href = newURL;
+                    }
+        </script>
     
 
 
@@ -179,14 +197,14 @@
                                 <div class="modal-content">
                                     
                                     <div class="modal-body">
-                                        <div class="mt-3 mb-3">
-                                            <img src="<%= item.media_url %>" style="width:465px; height:465px ;" alt="">
+                                        <div class="mt-3 mb-3" >
+                                            <img id="imgid" src="" style="width:465px; height:465px ;" alt="">
                                         </div>
                                       
 
                                     </div>
                                     <div class="modal-body" style="text-align:center ;">
-                                        <h5 class="modal-title" id="exampleModalCenterTitle">
+                                        <h5 class="modal-title" id="testH1">
                                             <%= item.caption %>
                                         </h5>
 
@@ -194,7 +212,7 @@
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <a type="button" href="/savePost/<%= item.id %>" class="btn btn-outline-dark">Save Post</a>
+                                        <a  href="https://google.com" id="linke" type="button"  class="btn btn-outline-dark">Save Post</a>
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +227,7 @@
                                     <h5 class="card-title">
                                         <%= item.caption %>
                                     </h5>
-                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                     <button type="button" class="btn btn-outline-dark"  onclick="caption('<%= item.caption %>') ,image('<%= item.media_url %>'),changeURL('<%= item.id %>') "  data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
                                         View Post       
                                     </button>
                                 </div>
