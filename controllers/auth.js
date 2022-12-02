@@ -56,8 +56,8 @@ postLogin = async (req, res) => {
       return res.status(422).render("login", {
         path: "/login",
         pageTitle: "Login",
-        errorMessage: "Invalid email or password.",
-        isLoggedIn: isLoggedIn,
+        errorMessage: "Invalid email or password",
+        isLoggedIn: false,
         user: req.session.AuthUser,
       });
     }
@@ -66,8 +66,8 @@ postLogin = async (req, res) => {
     return res.status(422).render("login", {
       path: "/login",
       pageTitle: "Login",
-      errorMessage: "Invalid email or password.",
-      isLoggedIn: isLoggedIn,
+      errorMessage: "Invalid email or password",
+      isLoggedIn: false,
       user: req.session.AuthUser,
     });
   }

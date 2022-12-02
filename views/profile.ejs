@@ -154,36 +154,30 @@
                     <h2><strong>YOUR INSTAGRAM POSTS<strong></strong></h2>
 
                 </div>
-
-                <% for (let item of data) { %>
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-
-                                <div class="modal-body">
-                                    <div class="mt-3 mb-3">
-                                        <img id="imgid" src="" style="width:465px; height:465px ;" alt="">
-                                    </div>
-
-
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="mt-3 mb-3">
+                                    <img id="imgid" src="" style="width:465px; height:465px ;" alt="">
                                 </div>
-                                <div class="modal-body" style="text-align:center ;">
-                                    <h5 class="modal-title" id="testH1">
-                                        <%= item.caption %>
-                                    </h5>
-
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <a href="https://google.com" id="linke" type="button"
-                                        class="btn btn-outline-dark">Save Post</a>
-                                </div>
+                            </div>
+                            <div class="modal-body" style="text-align:center ;">
+                                <h5 class="modal-title" id="testH1">
+                                </h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <a href="https://google.com" id="linke" type="button"
+                                    class="btn btn-outline-dark">SavePost</a>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <% for (let item of data) { %>
+
                     <div class="col " style="justify-content:center ;">
                         <div class="card shadow   bg-white rounded " style="width: 30rem; margin-top: 40px; ">
                             <div class="card-body">
